@@ -3,6 +3,8 @@
 
 ## about app
 This is an app base on [Ionic Framework](http://ionicframework.com/).
+This is tool for football funs;
+find filed, find football player, find a match
 
 ## run app
 Then, to run it, cd into `myApp` and run:

@@ -1,0 +1,13 @@
+.menu .item span{
+    font-size: 10px;
+    color: rgba(165, 214, 204, 0.98);
+}
+.show{
+    display: block;
+}
+.hide{
+    display: hide;
+}
+.card-item{
+    margin-top: 15px;
+}

@@ -1,0 +1,87 @@
+<ion-side-menus>
+
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-positive">
+            <ion-nav-back-button class="button-icon ion-arrow-left-c">
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
+            </button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-ios7-settings" ng-click="toggleRight()">
+            </button>
+        </ion-nav-buttons>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+        <!--目录-->
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar bar-header bar-balanced">
+            <h1 class="title">
+                寻找11人
+            </h1>
+        </ion-header-bar>
+        <ion-content>
+            <ul class="list menu">
+                <a href="#/event/check-in" class="item" menu-toggle="left">
+                    <i class="icon ion-map"></i>
+                    找球场
+                    <span>寻找城市的足球场</span>
+                </a>
+                <a href="#/event/attendees" class="item" menu-toggle="left">
+                    <i class="ion-person-add"></i>
+                    找球员
+                    <span>我需要更多的足球队员</span>
+                </a>
+                <a href="#/event/attendees" class="item" menu-toggle="left">
+                    <i class="ion-person-stalker"></i>
+                    找球队
+                    <span>我是球员我在寻找组织</span>
+                </a>
+                <a href="#/event/attendees" class="item" menu-toggle="left">
+                    <i class="ion-ios7-football-outline"></i>
+                    找球赛
+                    <span>找场比赛踢踢吧~</span>
+                </a>
+            </ul>
+        </ion-content>
+    </ion-side-menu>
+    <!--设置-->
+    <ion-side-menu side="right">
+        <ion-header-bar class="bar bar-header bar-balanced">
+            <h1 class="title">
+                设置
+            </h1>
+        </ion-header-bar>
+        <ion-content>
+            <ul class="list menu">
+                <a href="#/event/attendees" class="item" menu-toggle="right">
+                    <i class="ion-log-in"></i>
+                    登录
+                    <span>开启你的11人之旅吧~~~</span>
+                </a>
+                <a href="#/event/attendees" class="item" menu-toggle="right">
+                    <i class="ion-log-out"></i>
+                    注销
+                    <span>开启你的11人之旅吧~~~</span>
+                </a>
+                <a href="#/event/attendees" class="item" menu-toggle="right">
+                    <i class="ion-ios7-person"></i>
+                    个人中心
+                    <span>看看我的详细信息</span>
+                </a>
+                <a href="#/event/attendees" class="item" menu-toggle="right">
+                    <i class="ion-chatbox"></i>
+                    意见反馈
+                    <span>亲你有什么好的想法告诉我吧~~</span>
+                </a>
+                <a href="#/event/attendees" class="item" menu-toggle="right">
+                    <i class="ion-ios7-paper"></i>
+                    关于
+                    <span>寻找11人</span>
+                </a>
+            </ul>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

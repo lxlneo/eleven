@@ -46,7 +46,8 @@ app.factory('userDAO',function($ionicLoading){
     }
     // 获得当前用户
     function logout(){
-        AV.logOut();
+        AV.User.logOut();
+        return _getPromise();
     }
 
     // 得到当前登录用户
@@ -82,6 +83,10 @@ app.factory('userDAO',function($ionicLoading){
         },
         login:function(_user){
             return login(_user);
+        },
+        checkinLogin:function(){
+            return getCurrentUser();
         }
+
     }
 });

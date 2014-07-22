@@ -3603,7 +3603,7 @@ a.subdued {
   z-index: 13;
   padding: 20px;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   text-align: center;
   text-overflow: ellipsis;

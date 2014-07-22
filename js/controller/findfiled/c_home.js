@@ -1,26 +1,25 @@
 'use strict'
-app.controller('CTR_home', function ($scope, $rootScope,userDAO,Utils,$location) {
+app.controller('CTR_home', function ($scope, $rootScope,userDAO,Utils) {
 
     userDAO.checkinLogin().then(function (_user) {
         $rootScope.user = _user;
         init();
     }, function () {
-        Utils.goLogin();
+       Utils.goLogin();
     });
 
     function init(){
-       // initBMap();
         initFiled();
+        initBMap();
     }
 
     function initFiled(){
         $scope.msg = "寻找球场!";
         $scope.filedList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
-        $scope.active = 'map';
+        $scope.active = 'list';
         $scope.height = window.screen.height - 70;
         $scope.show = function (d) {
-            //$scope.active = d;
-            $location.path('#/eleven/login');
+            $scope.active = d;
         }
     }
     //initBMap();

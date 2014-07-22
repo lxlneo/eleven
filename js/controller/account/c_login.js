@@ -1,4 +1,18 @@
 'use strict';
 app.controller('CTR_login', function ($scope,userDAO,Utils) {
+        var vm = $scope.vm = {action:{},login:{},error:{}};
+        vm.action.login = function(){
+                 var ajaxData =  {username:vm.login.username,password:vm.login.password};
+                 userDAO.login(ajaxData).then(function(data){
+                        Utils.goHome();
+                     },
+                     function(error){
+                        vm.error.status = true;
+                        vm.error.info = error.message;
+                         $scope.$apply();
+                 });
+        }
+        vm.action.findpwd = function(){
 
+        }
 });

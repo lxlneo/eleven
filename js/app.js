@@ -29,6 +29,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'CTR_login'
                 }
             }
+        })
+        .state('eleven.register', {
+            url: "/register",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/account/register.html",
+                    controller: 'CTR_register'
+                }
+            }
         });
     $urlRouterProvider.otherwise("/eleven/home");
 }).run(function ($rootScope,$location) {

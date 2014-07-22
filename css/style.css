@@ -11,3 +11,10 @@
 .card-item{
     margin-top: 15px;
 }
+.error {
+    color: red;
+    text-align: center;
+}
+.small{
+   font-size: small;
+}

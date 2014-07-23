@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('Utils',function($rootScope,$location,$ionicLoading){
+app.factory('Utils',function($rootScope,$location,$ionicLoading,$ionicModal){
 
     function _goto(_url){
         $location.url(_url);
@@ -11,6 +11,9 @@ app.factory('Utils',function($rootScope,$location,$ionicLoading){
     function _goHome(){
         _goto('/eleven/home');
     }
+    function _goRegister(){
+        _goto('/eleven/register');
+    }
     function _showLoading(){
         $ionicLoading.show({
             templateUrl : 'templates/part/loading.html'
@@ -18,6 +21,13 @@ app.factory('Utils',function($rootScope,$location,$ionicLoading){
     }
     function _hideLoading(){
         $ionicLoading.hide();
+    }
+
+    /**
+     * $ionicModal
+     */
+    function _showModal(){
+        $ionicModal.show();
     }
     return{
         goto:function(url){
@@ -29,11 +39,17 @@ app.factory('Utils',function($rootScope,$location,$ionicLoading){
         goHome:function(){
             return _goHome();
         },
+        goRegister:function(){
+            return _goRegister();
+        },
         showLoading:function(){
             return _showLoading();
         },
         hideLoading:function(){
             return _hideLoading();
+        },
+        showModal:function(){
+            return _showModal();
         }
     }
 });

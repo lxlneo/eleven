@@ -46,8 +46,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         AV.initialize("8sgotlduzf4peeoagrcdgagl9g47ugxw1xl0jhc13d2z3xec", "2whvzsuuqrd69zg7s0dy41n2x9fjf5ppizh0sgl3156xgzn7");
         $rootScope.initAVOS = true;
     }
-}).controller('MenuCtrl', function ($scope, $ionicSideMenuDelegate,Utils,userDAO) {
-
+}).controller('MenuCtrl', function ($rootScope,$scope, $ionicSideMenuDelegate,Utils,userDAO) {
+    if(AV.User.current()){
+        $rootScope.user = AV.User.current();
+        $rootScope.hasLogin = true;
+    }
     $scope.toggleLeft = function () {
         $ionicSideMenuDelegate.toggleLeft();
     };
@@ -56,7 +59,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     };
     $scope.logout = function(){
         userDAO.logout().then(function(){
+            $scope.$apply();
             Utils.goHome();
         });
     }
+    $scope.$on('menu:update',function(){
+        $rootScope.hasLogin = true;
+        $scope.$apply();
+    });
 });

@@ -29,6 +29,38 @@
                     <span>找场比赛踢踢吧~</span>
                 </a>
             </ul>
+            <ul class="list menu">
+                <a ng-hide="hasLogin" href="#/eleven/login" class="item" menu-toggle="left">
+                    <i class="ion-log-in"></i>
+                    登录
+                    <span>开启你的11人之旅吧…</span>
+                </a>
+                <a ng-hide="hasLogin" href="#/eleven/register" class="item" menu-toggle="left">
+                    <i class="ion-log-in"></i>
+                    注册
+                    <span>来吧!寻找你的情怀…</span>
+                </a>
+                <a ng-show="hasLogin" href="#/event/attendees" class="item" menu-toggle="left">
+                    <i class="ion-ios7-person"></i>
+                    个人中心
+                    <span>看看我的详细信息</span>
+                </a>
+                <a ng-show="hasLogin" ng-click="logout()" class="item" menu-toggle="left">
+                    <i class="ion-log-out"></i>
+                    注销
+                    <span>开启你的11人之旅吧~~~</span>
+                </a>
+                <a href="#/event/attendees" class="item" menu-toggle="left">
+                    <i class="ion-chatbox"></i>
+                    意见反馈
+                    <span>亲你有什么好的想法告诉我吧~~</span>
+                </a>
+                <a href="#/event/attendees" class="item" menu-toggle="left">
+                    <i class="ion-ios7-paper"></i>
+                    关于
+                    <span>寻找11人</span>
+                </a>
+            </ul>
         </ion-content>
     </ion-side-menu>
 <!--中间内容-->
@@ -41,14 +73,14 @@
             <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
             </button>
         </ion-nav-buttons>
-        <ion-nav-buttons side="right">
+       <!-- <ion-nav-buttons side="right">
             <button class="button button-icon button-clear ion-ios7-settings" ng-click="toggleRight()">
             </button>
-        </ion-nav-buttons>
+        </ion-nav-buttons>-->
         <ion-nav-view name="menuContent"></ion-nav-view>
     </ion-side-menu-content>
 
-    <!--右设置-->
+    <!--右设置
     <ion-side-menu side="right">
         <ion-header-bar class="bar bar-header bar-calm">
             <h1 class="title">
@@ -85,4 +117,5 @@
             </ul>
         </ion-content>
     </ion-side-menu>
+    -->
 </ion-side-menus>

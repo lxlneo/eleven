@@ -22,8 +22,8 @@
                     <input type="password" name="password" ng-minlength="6" ng-model="vm.login.password" ng-required="true" placeholder="密码">
                 </label>
                 <button class="button button-block button-positive" type="submit" ng-disabled="loginForm.$invalid">登录</button>
-                <button class="button button-small button-block button-clear button-stable"
-                        ng-click="vm.action.findpwd()">忘记密码?
+                <button class="button button-small button-block button-clear button-calm" type="button"
+                        ng-disabled="loginForm.username.$invalid" ng-click="vm.action.findpwd()">输入邮箱即可找回密码
                 </button>
                 <!--<button class="button button-block button-outline button-calm">微博登录</button>
                 <button class="button button-block button-outline button-calm">微信登录</button>-->

@@ -1,9 +1,10 @@
 'use strict';
-app.controller('CTR_login', function ($scope,userDAO,Utils) {
+app.controller('CTR_login', function ($scope,userDAO,Utils,$rootScope) {
         var vm = $scope.vm = {action:{},login:{},error:{}};
         vm.action.login = function(){
                  var ajaxData =  {username:vm.login.username,password:vm.login.password};
                  userDAO.login(ajaxData).then(function(data){
+                        $rootScope.$broadcast('menu:update');
                         Utils.goHome();
                      },
                      function(error){
@@ -13,6 +14,11 @@ app.controller('CTR_login', function ($scope,userDAO,Utils) {
                  });
         }
         vm.action.findpwd = function(){
-
+            var ajaxData =  vm.login.username;
+            userDAO.revesePwd(ajaxData).then(function(data){
+                console.log(data);
+            },function(error){
+                console.log(error);
+            });
         }
 });

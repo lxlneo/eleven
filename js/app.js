@@ -38,7 +38,62 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'CTR_register'
                 }
             }
-        });
+        })
+        .state('eleven.player', {
+            url: "/player",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/player/index.html",
+                    controller: 'CTR_player'
+                }
+            }
+        })
+        .state('eleven.team', {
+            url: "/team",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/team/index.html",
+                    controller: 'CTR_login'
+                }
+            }
+        })
+        .state('eleven.match', {
+            url: "/match",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/match/index.html",
+                    controller: 'CTR_login'
+                }
+            }
+        })
+        .state('eleven.about', {
+            url: "/about",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/about/index.html",
+                    controller: 'CTR_login'
+                }
+            }
+        })
+        .state('eleven.feedback', {
+            url: "/feedback",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/feedback/index.html",
+                    controller: 'CTR_login'
+                }
+            }
+        })
+        .state('eleven.account', {
+            url: "/account/index",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/account/index.html",
+                    controller: 'CTR_login'
+                }
+            }
+        })
+        ;
     $urlRouterProvider.otherwise("/eleven/home");
 }).run(function ($rootScope,$location) {
     if (!!!$rootScope.initAVOS) {
@@ -50,6 +105,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     if(AV.User.current()){
         $rootScope.user = AV.User.current();
         $rootScope.hasLogin = true;
+    }else{
+        $rootScope.hasLogin = false;
     }
     $scope.toggleLeft = function () {
         $ionicSideMenuDelegate.toggleLeft();
@@ -59,12 +116,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     };
     $scope.logout = function(){
         userDAO.logout().then(function(){
+            $scope.hasLogin = false;
             $scope.$apply();
             Utils.goHome();
         });
     }
-    $scope.$on('menu:update',function(){
-        $rootScope.hasLogin = true;
-        $scope.$apply();
+    $scope.$on('login:change',function(event,_data){
+        $scope.hasLogin = _data;
     });
 });

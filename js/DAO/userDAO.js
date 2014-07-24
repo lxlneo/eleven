@@ -3,7 +3,6 @@
  */
 'use strict'
 app.factory('userDAO',function(Utils){
-    var p = _getPromise();
     var promise = {
         success: function (data) {
             Utils.hideLoading();
@@ -18,6 +17,16 @@ app.factory('userDAO',function(Utils){
     }
     //注册用户
     function regiseter(_user){
+        var p = _getPromise();
+        var promise = {
+            success: function (data) {
+                Utils.hideLoading();
+                p.resolve(data);
+            }, error: function (data, _error) {
+                Utils.hideLoading();
+                p.reject(data);
+            }
+        };
         var user = new AV.User();
         user.set("username", _user.username);
         user.set("password", _user.password);
@@ -30,6 +39,16 @@ app.factory('userDAO',function(Utils){
     }
     //login
     function login(_user){
+        var p = _getPromise();
+        var promise = {
+            success: function (data) {
+                Utils.hideLoading();
+                p.resolve(data);
+            }, error: function (data, _error) {
+                Utils.hideLoading();
+                p.reject(data);
+            }
+        };
         Utils.showLoading();
         AV.User.logIn(_user.username,_user.password,promise)
         return p;
@@ -62,6 +81,16 @@ app.factory('userDAO',function(Utils){
     }
     //找回密码
     function _revesePwd(_data){
+        var p = _getPromise();
+        var promise = {
+            success: function (data) {
+                Utils.hideLoading();
+                p.resolve(data);
+            }, error: function (data, _error) {
+                Utils.hideLoading();
+                p.reject(data);
+            }
+        };
         Utils.showLoading();
         AV.User.requestPasswordReset(_data, promise);
         return p;

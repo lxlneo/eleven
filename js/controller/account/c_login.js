@@ -3,8 +3,9 @@ app.controller('CTR_login', function ($scope,userDAO,Utils,$rootScope) {
         var vm = $scope.vm = {action:{},login:{},error:{}};
         vm.action.login = function(){
                  var ajaxData =  {username:vm.login.username,password:vm.login.password};
-                 userDAO.login(ajaxData).then(function(data){
-                        $rootScope.$broadcast('menu:update');
+                 userDAO.login(ajaxData).then(
+                     function(data){
+                        $rootScope.$broadcast('login:change',true);
                         Utils.goHome();
                      },
                      function(error){

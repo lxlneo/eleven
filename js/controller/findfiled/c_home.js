@@ -22,12 +22,11 @@ app.controller('CTR_home', function ($scope, $rootScope,userDAO,Utils) {
             $scope.active = d;
         }
     }
-    //initBMap();
+
     function initBMap() {
         // 百度地图API功能
         var map = new BMap.Map("fileMap");            // 创建Map实例
-        var point = new BMap.Point(116.404, 39.915);    // 创建点坐标
-        map.centerAndZoom(point, 15);                     // 初始化地图,设置中心点坐标和地图级别。
+        map.centerAndZoom('长沙', 15);    // 创建点坐标
         map.addControl(new BMap.ZoomControl());          //添加地图缩放控件
     }
 });

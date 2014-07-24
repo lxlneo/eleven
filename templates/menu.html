@@ -13,23 +13,21 @@
                     找球场
                     <span>寻找城市的足球场</span>
                 </a>
-                <a href="#/event/attendees" class="item" menu-toggle="left">
+                <a href="#/eleven/player" class="item" menu-toggle="left">
                     <i class="ion-person-add"></i>
                     找球员
                     <span>我需要更多的足球队员</span>
                 </a>
-                <a href="#/event/attendees" class="item" menu-toggle="left">
+                <a href="#/eleven/team" class="item" menu-toggle="left">
                     <i class="ion-person-stalker"></i>
                     找球队
                     <span>我是球员我在寻找组织</span>
                 </a>
-                <a href="#/event/attendees" class="item" menu-toggle="left">
+                <a href="#/eleven/match" class="item" menu-toggle="left">
                     <i class="ion-ios7-football-outline"></i>
                     找球赛
                     <span>找场比赛踢踢吧~</span>
                 </a>
-            </ul>
-            <ul class="list menu">
                 <a ng-hide="hasLogin" href="#/eleven/login" class="item" menu-toggle="left">
                     <i class="ion-log-in"></i>
                     登录
@@ -40,25 +38,25 @@
                     注册
                     <span>来吧!寻找你的情怀…</span>
                 </a>
-                <a ng-show="hasLogin" href="#/event/attendees" class="item" menu-toggle="left">
+                <a ng-show="hasLogin" href="#/eleven/account/index" class="item" menu-toggle="left">
                     <i class="ion-ios7-person"></i>
                     个人中心
                     <span>看看我的详细信息</span>
+                </a>
+                <a href="#/eleven/feedback" class="item" menu-toggle="left">
+                    <i class="ion-chatbox"></i>
+                    意见反馈
+                    <span>亲你有什么好的想法告诉我吧~~</span>
+                </a>
+                <a href="#/eleven/about" class="item" menu-toggle="left">
+                    <i class="ion-ios7-paper"></i>
+                    关于
+                    <span>寻找11人</span>
                 </a>
                 <a ng-show="hasLogin" ng-click="logout()" class="item" menu-toggle="left">
                     <i class="ion-log-out"></i>
                     注销
                     <span>开启你的11人之旅吧~~~</span>
-                </a>
-                <a href="#/event/attendees" class="item" menu-toggle="left">
-                    <i class="ion-chatbox"></i>
-                    意见反馈
-                    <span>亲你有什么好的想法告诉我吧~~</span>
-                </a>
-                <a href="#/event/attendees" class="item" menu-toggle="left">
-                    <i class="ion-ios7-paper"></i>
-                    关于
-                    <span>寻找11人</span>
                 </a>
             </ul>
         </ion-content>
